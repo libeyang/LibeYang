@@ -1,0 +1,24 @@
+new button0 _
+new label0 _
+new edit0 _
+new memo0 _
+new label1 _
+form text "작업창"
+form size 800;628
+form position 889;73
+button0 text "앙?"
+button0 size 100;40
+button0 position 100;160
+label0 text "글씨0"
+label0 size 151;28
+label0 position 100;210
+edit0 text "입력 상자0"
+edit0 size 100;36
+edit0 position 100;100
+memo0 lines "큰 입력 ";"상자0";
+memo0 size 100;100
+memo0 position 500;260
+label1 text "글씨1"
+label1 size 151;28
+label1 position 400;220
+event button0 pop#"기모띠?!"#_#_
