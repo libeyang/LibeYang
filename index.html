@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- send mail js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('GB6fOxLZCIsUqOFFS');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_3iasp2p', 'template_ix2ulju', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                        document.getElementById("contact-form").reset();
+                        alert("메일을 정상적으로 전송했습니다.");
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                        document.getElementById("contact-form").reset();
+                        alert("메일 전송에 실패했습니다.");
+                    });
+            });
+        }
+    </script>
+
+    <!-- icon css -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- main css -->
+    <link rel="stylesheet" href="resource/style.css">
+
+    <title>Seung Bin's portfolio</title>
+</head>
+<body>
+
+    <!-- scroll top -->
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-chevrons-up scrolltop_icon' ></i>
+    </a>
+
+    <!-- header -->
+    <header class="header" id="header">
+
+        <!-- navagation & container -->
+        <nav class="nav container">
+
+            <!-- logo -->
+            <a href="#" class="nav_logo">
+                <img src="resource/img/logo.png" alt="logo.png">
+                <h1> HB</h1>
+            </a>
+
+            <!-- menu -->
+            <div class="nav_menu" id="nav-menu">
+                <ul class="nav_list">
+                    <li class="nav_item"><a href="#home" class="nav_link">Home</a></li>
+                    <li class="nav_item"><a href="#about" class="nav_link">About</a></li>
+                    <li class="nav_item"><a href="#skills" class="nav_link">Skills</a></li>
+                    <li class="nav_item"><a href="#projects" class="nav_link">Projects</a></li>
+                    <li class="nav_item"><a href="#contact" class="nav_link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- toggle icon --> 
+            <div class="nav_toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main class="main" style="margin:0; padding:0" >
+
+        <!-- home -->
+        <section class="home" id="home">
+
+            <!-- home_container grid -->
+            <div class="home_container grid">
+
+                <!-- home data -->
+                <div class="home_data">
+                    <span class="home_greeting">만나서 반갑습니다!</span>
+                    <h2 class="home_professtion">꿈꾸는 개발자</h2>
+                    <h2 class="home_name"> 홍승빈 입니다</h2>
+                </div>
+
+                <!-- home description -->
+                <div class="home_description">
+                    <br><br><i>"개발자로서 성장하기 위해 오늘도 노력하고 있습니다"</i>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- about & container -->
+        <section class="about section container" id="about">
+
+            <!-- about subtitle, title -->
+            <span class="section-subtitle">Introduction</span>
+            <h2 class="section-title">About Me</h2>
+
+            <!-- about_container grid -->
+            <div class="about_container grid">
+
+                <!-- about img -->
+                <img src="resource/img/about.jpg" class="about_img" alt="about.gif">
+
+                <!-- about data -->
+                <div class="about_data grid">
+                    <p class="about_description">안녕하세요, 제 이름은 홍승빈입니다.<br><br> 현재 홍익대학교 세종캠퍼스 소프트웨어융합학과에 재학중이며 아직 여러가지를 배우는 과정에 있습니다. 배운 기술과 지식을 어떤 방식으로든 응용하는 것을 좋아합니다. Code4Every1 프로젝트의 리더로서 한국 정보올림피아드 공모전에 출전한 이력이 있습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- skills & container -->
+        <section class="skills section container" id="skills">
+
+            <!-- skills subtitle & title -->
+            <span class="section-subtitle">language experience</span>
+            <h2 class="section-title">Skills</h2>
+
+            <!-- skills_container grid -->
+            <div class="skills_container grid">
+
+                <!-- skills data -->
+                <div class="skills_data">
+                    <h2 class="skills_title">
+                        <i class='bx bx-code skills_title-icon'></i>
+                        Learning history
+                    </h2>
+
+                    <div class="grid">
+                        <div class="skills_data">
+                            <h3 class="skills_date">
+                                <i class='bx bx-calendar skills_icon'></i>
+                                2013 ~ 2014
+                            </h3>
+
+                            <div class="skills_box">
+                                <span class="skills_elementary">
+                                    In elementary school - C language <br><br>
+                                    <i class='bx bx-chevrons-right skills_icon'></i> 초등학교 4학년때부터 프로그래밍 분야에 관심을 가졌습니다. 그리고 C 언어로 독학을 처음 시작했던 시기입니다. 
+                                </span>
+                            </div><br><br>
+
+                            <h3 class="skills_date">
+                                <i class='bx bx-calendar skills_icon'></i>
+                                2016 ~ 2017
+                            </h3>
+
+                            <div class="skills_box">
+                                <span class="skills_middle">
+                                    In middle school - C++ 
+                                    <i class='bx bxl-c-plus-plus skills_icon'></i> <br><br>
+                                    <i class='bx bx-chevrons-right skills_icon'></i> 처음으로 팀 프로젝트를 진행한 시기이며 이때 처음 배운 C++를 사용했습니다. 
+                                </span>
+                            </div><br><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills_data">
+                    <h2 class="skills_title"><br></h2>
+
+                    <h3 class="skills_date">
+                        <i class='bx bx-calendar skills_icon'></i>
+                        2019 ~ 2020
+                    </h3>
+
+                    <div class="skills_box">
+                        <span class="skills_high">
+                            In high school - Python
+                            <i class='bx bxl-python skills_icon'></i> <br><br>
+                            <i class='bx bx-chevrons-right skills_icon'></i> 파이썬으로 프로그래밍의 기초를 배웠으며, 아두이노를 이용한 간단한 1인 프로젝트를 진행했습니다.
+                        </span>
+                    </div><br><br>
+
+                    <h3 class="skills_date">
+                        <i class='bx bx-calendar skills_icon'></i>
+                        2021 ~ 
+                    </h3>
+
+                    <div class="skills_box">
+                        <span class="skills_high">
+                            In university - C, Python <br><br>
+                            <i class='bx bx-chevrons-right skills_icon'></i> 프로그래밍 언어 이외에 자료구조와 같은 전공과 관련된 여러 내용을 배우고 있습니다.
+                        </span>
+                    </div><br><br>
+                </div>
+            </div>
+            <h3 class="skills_result"><i>" 가장 자신있고 숙련된 언어는 C와 Python 입니다! "</i></h3>
+        </section>
+
+        <!-- projects & container -->
+        <section class="projects section container" id="projects">
+
+            <!-- projects subtitle & title -->
+            <span class="section-subtitle">Contribution in projects</span>
+            <h2 class="section-title">Projects</h2>
+
+            <!-- projects_container gird-->
+            <div class="projects_container grid">
+
+                <!-- projects data -->
+                <div class="projects_data">
+                    <i class='bx bx-clipboard projects_icon'>
+                        <h3 class="projects_title">Code4Every1</h3>
+                    </i>
+                    <img src="resource/img/Code4Every1.png" alt="Code4Every1.png" class="projects_img"><br>
+                    <a href="info.html#Code4Every1" class="button">More Info</a>
+                </div>
+
+                <div class="projects_data">
+                    <i class='bx bx-clipboard projects_icon'>
+                        <h3 class="projects_title">Web Portfolio</h3>
+                    </i>
+                    <img src="resource/img/WebProject.png" alt="WebPortfolio.png" class="projects_img"><br>
+                    <a href="info.html#WebPortfolio" class="button">More Info</a>
+                </div>
+
+                <div class="projects_data">
+                    <i class='bx bx-clipboard projects_icon'>
+                        <h3 class="projects_title">Remote Control Box</h3>
+                    </i>
+                    <img src="resource/img/RemoteBox.png" alt="RemoteBox.png" class="projects_img"><br>
+                    <a href="info.html#RemoteBox" class="button">More Info</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- contact & container -->
+        <section class="contact section container" id="contact">
+
+            <!-- contact subtitle & title -->
+            <span class="section-subtitle">Communicate with me</span>
+            <h2 class="section-title">Contact Me</h2>
+
+            <!-- contact_container grid -->
+            <div class="contact_container grid">
+
+                <!-- contact_content grid -->
+                <div class="contact_content grid">
+
+                    <!-- contact_content data -->
+                    <div class="contact_box">
+                        <i class='bx bx-phone contact_icon'></i>
+                        <h3 class="contact_title">Phone</h3>
+                        <span class="contact_description">010-5009-2834</span>
+                    </div>
+
+                    <div class="contact_box">
+                        <i class='bx bx-envelope contact_icon'></i>
+                        <h3 class="contact_title">G-mail</h3>
+                        <span class="contact_description">hongsb119@gmail.com</span>
+                    </div>
+
+                    <div class="contact_box">
+                        <i class='bx bx-link contact_icon'></i>
+                        <h3 class="contact_title">Link</h3>
+                        <div>
+                            <a href="https://github.com/libeyang/LibeYang" target="_blank" class="contact_social">
+                                <i class='bx bxl-github'></i>
+                            </a>
+                            <a href="https://t.me/+klashpD8YZNiMDk1" target="_blank" class="contact_social">
+                                <i class='bx bxl-telegram'></i>
+                            </a>
+                            <a href="https://open.kakao.com/o/saNpDyje" target="_blank" class="contact_social" >
+                                <i class='bx bxs-message-rounded-dots'></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- contact_content form -->
+                <form class="contact_form" id="contact-form">
+                    <input type="hidden" name="contact_number">
+                    <div class="contact_inputs">
+                        <input type="text" placeholder="Name" class="contact_input" name="from_name">
+                        <input type="email" placeholder="Email" class="contact_input" name="from_email">
+                    </div>
+
+                    <div class="contact_inputs_title">
+                        <input type="text" placeholder="Title" class="contact_input" name="title_email">
+                    </div>
+
+                    <textarea cols="0" rows="7" class="contact_input" name="message"></textarea>
+
+                    <input type="submit" value="Send Message" class="button contact_button" name="submit">
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <!-- footer -->
+    <footer class="footer">
+
+        <!-- footer container -->
+        <div class="footer_content container">
+            <p class="footer_description">제 첫 포트폴리오 웹 페이지에 방문해주셔서 감사합니다!</p>
+            <p class="footer_copyright">&#169; 2021 Seung Bin Hong, All right reserved</p>
+        </div>
+    </footer>
+
+    <!-- main js -->
+    <script src="resource/script.js"></script>
+
+</body>
+</html>
